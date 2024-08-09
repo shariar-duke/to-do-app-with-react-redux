@@ -11,7 +11,7 @@ import initialState from "./initialState";
         
          return {
             ...state, 
-            status : action.paylod,
+            status : action.payload,
          }
 
      case COLORCHANGED : 
