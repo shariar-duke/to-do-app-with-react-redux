@@ -11,5 +11,18 @@ export const initialState = [
         text: "Learn Redux",
         completed: false, 
         color:"green"
+    },
+    {
+        id : 3, 
+        text: "Learn Python",
+        completed: true,
+        color : "red"
+    }
+    ,
+    {
+        id : 4, 
+        text: "Learn FastApi",
+        completed: false, 
+        color:"green"
     }
 ]

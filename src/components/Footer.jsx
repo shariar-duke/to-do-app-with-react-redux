@@ -29,7 +29,7 @@ export default function Footer() {
 
     const handleColorChange = (color) => {
 
-      console.log("The color I am sending", color)
+
         if (colors.includes(color)) {
             dispatch(colorChanged(color, "remove"));
         } else {
