@@ -16,14 +16,14 @@ import initialState from "./initialState";
 
      case COLORCHANGED : 
         
-         const {color, changeType} = action.paylod;
+         const {color, changeType} = action.payload;
 
          switch(changeType)
          {
             case "added":
                 return {
                     ...state, 
-                    color: [...state.colors, color]
+                    colors: [...state.colors, color]
                 }
 
 
