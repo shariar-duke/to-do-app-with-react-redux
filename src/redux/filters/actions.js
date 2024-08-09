@@ -13,7 +13,7 @@ export const colorChanged =(color, changeType)=>
 }
 
 
-export const statusChnaged =(status)=> 
+export const statusChanged =(status)=> 
 {
     return {
         type : STATUSCHANGED, 
