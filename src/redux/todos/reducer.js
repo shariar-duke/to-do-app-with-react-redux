@@ -57,7 +57,7 @@ const reducer =(state = initialState, action) =>
         return state.map((todo)=> {
             return {
                 ...todo, 
-                completed:true
+                completed : true,
             }
         })
 
