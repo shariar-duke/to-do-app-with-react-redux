@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useDispatch } from "react-redux";
-import { colorSelected, toggled } from "../redux/todos/actions";
+import { colorSelected, deleted, toggled } from "../redux/todos/actions";
 export default function TaskItem({ todo }) {
   const dispatch = useDispatch()
   const {id , text , completed , color} = todo
@@ -15,6 +15,11 @@ export default function TaskItem({ todo }) {
   {
 
     dispatch(colorSelected(id,color))
+  }
+
+  function handleDelete() 
+  {
+   dispatch(deleted(id))
   }
   
   return (
@@ -55,6 +60,7 @@ export default function TaskItem({ todo }) {
         <div onClick={()=>handleColor("yellow")} className={`flex-shrink-0 h-4 w-4 rounded-full border-2 ml-auto cursor-pointer ${color === "yellow" && "bg-yellow-500"}  border-yellow-500 hover:bg-yellow-500`}></div>
         <div onClick={()=>handleColor("red")} className={`flex-shrink-0 h-4 w-4 rounded-full border-2 ml-auto cursor-pointer ${color === "red" && "bg-red-500"}  border-red-500 hover:bg-red-500`}></div>
         <img
+          onClick={handleDelete}
           src="/images/cancel.png"
           className="h-4 w-4 cursor-pointer"
           alt="cancel"
