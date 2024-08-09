@@ -6,36 +6,41 @@ export default function TaskList() {
   const todos = useSelector((state) => state.todos);
 
   const filters = useSelector((state) => state.filters);
+  const filterByStatus =(todo) => 
+  {
+    const { status } = filters;
+    switch (status) {
+      case "Incomplete":
+        return !todo.completed;
+
+      case "Complete":
+        return todo.completed;
+
+      default:
+        return true;
+    }
+  }
+
+  const filterByColors =(todo)=> 
+  {
+    const { colors } = filters;
+
+    if (colors.length == 0) {
+      return true;
+    } else {
+      if (colors.includes(todo.color)) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
 
   return (
     <div className="border-b-[1px] border-gray-300 pb-[12px]">
       {todos
-        .filter((todo) => {
-          const { status } = filters;
-          switch (status) {
-            case "Incomplete":
-              return !todo.completed;
-
-            case "Complete":
-              return todo.completed;
-
-            default:
-              return true;
-          }
-        })
-        .filter((todo) => {
-          const { colors } = filters;
-
-          if (colors.length == 0) {
-            return true;
-          } else {
-            if (colors.includes(todo.color)) {
-              return true;
-            } else {
-              return false;
-            }
-          }
-        })
+        .filter(filterByStatus)
+        .filter(filterByColors) 
         .map((todo) => (
           <TaskItem todo={todo} key={todo.id} />
         ))}

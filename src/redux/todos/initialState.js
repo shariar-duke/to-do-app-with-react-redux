@@ -23,6 +23,6 @@ export const initialState = [
         id : 4, 
         text: "Learn FastApi",
         completed: false, 
-        color:"green"
+        color:"yellow"
     }
 ]
