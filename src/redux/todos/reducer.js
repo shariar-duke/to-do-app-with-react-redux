@@ -17,7 +17,8 @@ const reducer =(state = initialState, action) =>
    case ADDED : 
        return [...state, {
         id : nextTodoId(state),
-        ...action.payload
+        text: action.payload, 
+        completed:false,
        }]
    // case for toggled 
    case TOGGLED: 
