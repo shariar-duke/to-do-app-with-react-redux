@@ -5,7 +5,7 @@ export default function TaskList() {
   
   // useSelector hook ta ekhnkar current state take ekta object tar name state tar modhe dhukay dey 
   const todos = useSelector((state) => state.todos);
-  console.log("The todo is", todos)
+
   return (
     <div className="border-b-[1px] border-gray-300 pb-[12px]">
       {
