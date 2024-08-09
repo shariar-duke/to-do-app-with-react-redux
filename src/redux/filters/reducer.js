@@ -3,7 +3,7 @@ import { COLORCHANGED, STATUSCHANGED } from "./actionTypes";
 import initialState from "./initialState";
 
 
-export  const reducer =(state = initialState , action) => 
+ const reducer =(state = initialState , action) => 
 {
     switch (action.type)
     {
@@ -45,3 +45,4 @@ export  const reducer =(state = initialState , action) =>
     }
 }
 
+export default reducer

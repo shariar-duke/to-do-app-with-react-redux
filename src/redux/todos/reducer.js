@@ -9,7 +9,7 @@ function nextTodoId (todos)
    return maxId + 1;
 }
 
- export const reducer =(state = initialState, action) => 
+const reducer =(state = initialState, action) => 
 {
   switch(action.type) 
   {
@@ -71,3 +71,6 @@ function nextTodoId (todos)
        
 }
 }
+
+
+export default reducer
